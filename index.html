@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="JN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jyanken Program</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- header タイトル表示-->
+    <h1>ポケモンジャンケンバトル！</h1>
+
+    <!-- message_box メッセージボックス-->
+    <div class="message_box">
+        <p class="message_contents">
+            グー、チョキ、パーのどれかをえらんでね。かった方がこうげき！<br>
+            （※こうげきりょくはグー：20、チョキ：30、パー：40で、<br>
+            あたえるダメージはヒットのつよさによってかわるよ！）
+        </p>
+    </div>
+    <!-- Name and HP 名前とヒットポイント表示-->
+    <div class="wrapper">
+        <Div class="name_hp chara_a">
+            <p class="name chara_a">ピカチュウ</p>
+            <p class="hp">H/P</p>
+            <div class="hp_gage chara_a">
+                <Div class="hp_max chara_a"></Div>
+                <Div class="hp_now chara_a">100/100</Div>
+            </div>
+        </Div>
+        <Div class="name_hp chara_b">
+            <p class="name chara_b">ロコン（アローラ）</p>
+            <p class="hp">H/P</p>
+            <div class="hp_gage chara_b">
+                <Div class="hp_max chara_b"></Div>
+                <Div class="hp_now chara_b">100/100</Div>
+            </div>
+        </Div>
+    </div>
+    <!-- battle field 戦場-->
+    <div class="wrapper">
+        <div class="battle_character chara_a">
+            <img src="images/Pikachu.png" alt="味方キャラ">
+        </div>
+        <div class="battle_hand chara_a">
+            <img src="images/gu-300x300.png" alt="味方の手">
+        </div>
+        <p class="VS">VS</p>
+        <div class="battle_hand chara_b">
+            <img src="images/choki-300x300.png" alt="相手の手">
+        </div>
+        <div class="battle_character chara_b">
+            <img src="images/alora-rokon.png" alt="相手キャラ">
+        </div>       
+    </div>
+
+    <!-- select options ぐーちょきぱーの選択肢-->
+    <div class="wrapper option">
+        <button type="button" class="option_box" value="0">
+            <img src="images/gu-300x300.png" alt="グー">
+            <p class="option_hand">グー</p>
+        <button type="button" class="option_box" value="1">
+            <img src="images/choki-300x300.png" alt="チョキ">
+            <p class="option_hand">チョキ</p>
+        </button>
+        <button type="button" class="option_box" value="2">
+            <img src="images/pa-300x300.png" alt="パー">
+            <p class="option_hand">パー</p>
+        </button>
+
+
+<div class = "button_wrap">
+    <!-- button 最初に戻る/キャラ替えボタン-->
+    <input class="btn" type="button" value="さいしょからもう一回！">
+    <!-- button キャラを替えて再開ボタン-->
+    <div class = "select_chara">
+        <select name="select_character" class="pulldown">
+            <option value="0">ピカチュウ</option>
+            <option value="1">ロコン（アローラ）</option>
+            <option value="2">イーブイ</option>
+            <option value="3">ポニータ（ガラル）</option>
+            <option value="4">コリンク</option>
+        </select>
+        <button class="btn2" type="button">自分のキャラをかえる<br>（相手は自動で決まるよ）</button>
+    </div>
+    </div>
+</div>
+
+
+    <!-- Jqueryを使えるようにする -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/jyanken.js"></script>
+</body>
+
+  <!-- #footer/-->
+    <footer id="footer" class="footer text-center">
+    <small class="copyrights">copyrights2022 ポケジャン製作委員会 All Rights Reserved.</small>
+    </footer>
+  <!-- /#footer -->
+</html>
