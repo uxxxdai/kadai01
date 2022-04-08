@@ -24,9 +24,9 @@ $(".btn").on("click", function restart() {
     nowhp_b = maxhp_b;
     damage = 0;
     $(".hp_now.chara_a").text(nowhp_a + "/" + maxhp_a);
-    $(".hp_now.chara_a").width(400 / maxhp_a * nowhp_a + "px");
+    $(".hp_now.chara_a").width(350 / maxhp_a * nowhp_a + "px");
     $(".hp_now.chara_b").text(nowhp_b + "/" + maxhp_b);
-    $(".hp_now.chara_b").width(400 / maxhp_b * nowhp_b + "px");
+    $(".hp_now.chara_b").width(350 / maxhp_b * nowhp_b + "px");
     $(".message_contents").html("グー、チョキ、パーのどれかをえらんでね。かった方がこうげき！<br>（※こうげきりょくはグー：20、チョキ：30、パー：40で、<br>あたえるダメージはヒットのしかたによってかわるよ！）");
 })
 
@@ -47,9 +47,9 @@ $(".btn").on("click", function restart() {
         $(".battle_character.chara_a img").attr("src","images/"+ chara_imgs[chara_a]);
         $(".battle_character.chara_b img").attr("src","images/"+ chara_imgs[chara_b]);
         $(".hp_now.chara_a").text(nowhp_a + "/" + maxhp_a);
-        $(".hp_now.chara_a").width(400 / maxhp_a * nowhp_a + "px");
+        $(".hp_now.chara_a").width(350 / maxhp_a * nowhp_a + "px");
         $(".hp_now.chara_b").text(nowhp_b + "/" + maxhp_b);
-        $(".hp_now.chara_b").width(400 / maxhp_b * nowhp_b + "px");
+        $(".hp_now.chara_b").width(350 / maxhp_b * nowhp_b + "px");
         $(".message_contents").html("グー、チョキ、パーのどれかを選んでね。勝った方がこうげき！<br>（※こうげきりょくはグー：20、チョキ：30、パー：40で、<br>あたえるダメージはヒットのつよさによってかわるよ！）");
     })
 
@@ -87,21 +87,22 @@ $(".btn").on("click", function restart() {
                             if (nowhp_b > 0) {
                                 if (random == 0) {
                                     $(".message_contents").text("こうげきをかわされた。");
+                                    nowhp_b = nowhp_b + damage;
                                 }else if (random > 0 && random <=3){
-                                    $(".message_contents").text("クリティカルヒット！" + charaname_b[chara_b] + "に[ " + damage + " ]のダメージを与えた");
+                                    $(".message_contents").text("クリティカルヒット！" + charaname_b[chara_b] + "に " + damage + " のダメージを与えた");
                                     $(".hp_now.chara_b").text(nowhp_b + "/" + maxhp_b);
-                                    $(".hp_now.chara_b").width(400 / maxhp_b * nowhp_b + "px");
+                                    $(".hp_now.chara_b").width(350 / maxhp_b * nowhp_b + "px");
                                 }else if(random > 3 && random <=7){
-                                    $(".message_contents").text("まぁまぁのあたりだ！" + charaname_b[chara_b] + "に[ " + damage + " ]のダメージを与えた");
+                                    $(".message_contents").text("まぁまぁのあたりだ！" + charaname_b[chara_b] + "に " + damage + " のダメージを与えた");
                                     $(".hp_now.chara_b").text(nowhp_b + "/" + maxhp_b);
-                                    $(".hp_now.chara_b").width(400 / maxhp_b * nowhp_b + "px");
+                                    $(".hp_now.chara_b").width(350 / maxhp_b * nowhp_b + "px");
                                 }else if(random >= 7 && random <=10){
-                                    $(".message_contents").text("よわいあたりだ！" + charaname_b[chara_b] + "に[ " + damage + " ]のダメージを与えた");
+                                    $(".message_contents").text("よわいあたりだ！" + charaname_b[chara_b] + "に " + damage + " のダメージを与えた");
                                     $(".hp_now.chara_b").text(nowhp_b + "/" + maxhp_b);
-                                    $(".hp_now.chara_b").width(400 / maxhp_b * nowhp_b + "px");
+                                    $(".hp_now.chara_b").width(350 / maxhp_b * nowhp_b + "px");
                                 }
                                 }else {
-                                    $(".message_contents").text(charaname_b[chara_b] + "に[ " + damage + " ]のダメージを与えた");
+                                    $(".message_contents").text(charaname_b[chara_b] + "に " + damage + " のダメージを与えた");
                                 setTimeout(() => {
                                     $(".message_contents").html(charaname_b[chara_b] + "はちからつきた。<br>" + charaname_a[chara_a] + "のかち！<br>ゲームおしまい。”さいしょからもう一回！”を押してね。");
                                     $(".hp_now.chara_b").text("0/" + maxhp_b);
@@ -123,21 +124,22 @@ $(".btn").on("click", function restart() {
                         if (nowhp_a > 0) {
                             if (random == 0) {
                                 $(".message_contents").text("こうげきをかわした。");
+                                nowhp_a = nowhp_a + damage;
                             }else if(random > 0 && random <=3){
-                                $(".message_contents").text("クリティカルヒット！" + charaname_a[chara_a] + "は[ " + damage + " ]のダメージを受けた");
+                                $(".message_contents").text("クリティカルヒット！" + charaname_a[chara_a] + "は " + damage + " のダメージを受けた");
                                 $(".hp_now.chara_a").text(nowhp_a + "/" + maxhp_a);
-                                $(".hp_now.chara_a").width(400 / maxhp_a * nowhp_a + "px");
+                                $(".hp_now.chara_a").width(350 / maxhp_a * nowhp_a + "px");
                             }else if(random > 3 && random <=7){
-                                $(".message_contents").text("まぁまぁのあたりだ！" + charaname_a[chara_a] + "は[ " + damage + " ]のダメージを受けた");
+                                $(".message_contents").text("まぁまぁのあたりだ！" + charaname_a[chara_a] + "は " + damage + " のダメージを受けた");
                                 $(".hp_now.chara_a").text(nowhp_a + "/" + maxhp_a);
-                                $(".hp_now.chara_a").width(400 / maxhp_a * nowhp_a + "px");
+                                $(".hp_now.chara_a").width(350 / maxhp_a * nowhp_a + "px");
                             }else if(random > 7 && random <=10){
-                                $(".message_contents").text("よわいあたりだ！" + charaname_a[chara_a] + "は[ " + damage + " ]のダメージを受けた");
+                                $(".message_contents").text("よわいあたりだ！" + charaname_a[chara_a] + "は " + damage + " のダメージを受けた");
                                 $(".hp_now.chara_a").text(nowhp_a + "/" + maxhp_a);
-                                $(".hp_now.chara_a").width(400 / maxhp_a * nowhp_a + "px");
+                                $(".hp_now.chara_a").width(350 / maxhp_a * nowhp_a + "px");
                             }
                         }else {
-                            $(".message_contents").text( charaname_a[chara_a] + "は[ " + damage + " ]のダメージを受けた");
+                            $(".message_contents").text( charaname_a[chara_a] + "は " + damage + " のダメージを受けた");
                         setTimeout(() => {
                             $(".message_contents").html(charaname_a[chara_a] + "はちからつきた。<br>" + charaname_b[chara_b] + "のかち！<br>ゲームおしまい。”さいしょからもう一回！”を押してね。");
                             $(".hp_now.chara_a").text("0/" + maxhp_a);

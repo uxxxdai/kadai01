@@ -1,9 +1,9 @@
 body{
     font-family: 'M PLUS 1p', sans-serif;
-    width:1200px;
+    width:1000px;
     max-width:100%;
-    text-align: center;
     margin:auto;
+    text-align: center;
 }
 img{
     max-width: 100%;
@@ -75,13 +75,13 @@ Name and HP 名前とヒットポイント
     top: 40px;
 }
 .hp_max{
-    width: 400px;
+    width: 350px;
     height: 20px;
     background-color: red;
     position: relative;
 }
 .hp_now{
-    width: 400px;
+    width: 350px;
     height: 20px;
     background-color: yellowgreen;
     text-align: right;
@@ -90,7 +90,6 @@ Name and HP 名前とヒットポイント
     left: 0px;
     top: 0px;
 }
-
 
 /* -----------------
 battle field 戦場
@@ -171,8 +170,8 @@ footer
     width:100%;
     padding:10px 0;
     background-color: #707070;
-  }
+}
   
-  .copyrights{
+.copyrights{
     color:#fff;
-  }
+}
