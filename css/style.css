@@ -1,7 +1,9 @@
 body{
     font-family: 'M PLUS 1p', sans-serif;
-    width:1336px;
+    width:1200px;
+    max-width:100%;
     text-align: center;
+    margin:auto;
 }
 img{
     max-width: 100%;
